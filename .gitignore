@@ -1,0 +1,28 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Env
+.env
+
+# Mac
+.DS_Store
+
+# Android / Emulator / Keys
+.android/
+*.key
+*.pem
+
+# Large files
+*.bin
+*.img
+*.qcow2
+*.zip
+*.iso
+
+# Uploads (optional)
+backend/uploads/
