@@ -116,39 +116,36 @@ Tools
  GitHub Desktop
  VS Code
 
- -Getting Started:
-1. Clone Repository
+ -Installation:
 
+ 1. Clone Repository
+```bash
 git clone https://github.com/BEZZARRANYA/ems-ai-crm.git
 cd ems-ai-crm
-
-
 2. Backend Setup
-
 cd backend
 
 python3 -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+pip install python-docx
 
 python app.py
 
 Backend runs on:
-
 http://127.0.0.1:5001
 
-
 3. Frontend Setup
-
 cd app
 
 npm install
 npm run dev
 
 Frontend runs on:
-
 http://localhost:5173
+
+Make sure backend is running before starting the frontend.
 
 
  -Frontend ↔ Backend Connection:
