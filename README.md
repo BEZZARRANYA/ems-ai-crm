@@ -1,155 +1,217 @@
-# EMS AI CRM
+ -EMS AI CRM
+AI-Powered Event & Contract Management Platform
 
-An AI-powered Event Management System (EMS) that streamlines event operations, contract handling, and client management — enhanced with intelligent contract analysis using local AI models.
+A full-stack application that combines event management, client CRM, and AI contract analysis into one intelligent system.
 
-This project combines modern frontend design with a robust backend and real-world business logic to simulate a production-ready CRM system for event-based businesses.
+ -Overview
 
----
+EMS AI CRM is built to simulate a real-world business platform used by event agencies and managers.
 
-##  Overview
+It allows users to:
 
-EMS AI CRM is built to solve a real problem: managing events, contracts, and clients efficiently while reducing risk through automated contract analysis.
+Manage events, clients, and contracts
+Upload and analyze contracts automatically
+Detect risks using AI
+Track invoices and business status
 
-Instead of manually reviewing contracts, this system extracts text and uses AI to generate:
-- Clear summaries
-- Key obligations
-- Risk flags
-- Actionable recommendations
+ This is not just a CRUD app — it’s a workflow-driven system powered by AI
 
-This makes it especially useful for:
-- Event agencies
-- Artist managers
-- Venue organizers
-- Freelancers handling contracts
+ System Architecture
+React Frontend (UI)
+        │
+        │  API Requests (fetch)
+        ▼
+Flask Backend (REST API)
+        │
+        ├── SQLite Database
+        ├── File Storage (Contracts)
+        └── Ollama (Local AI Model)
+        
+ Core Features
 
----
+ -Authentication
 
-##  Core Features
+Sign up and login pages
+Structured entry into the system
+Foundation for secure access
+ Home Page
 
-###  Event Management
-- Create, update, and delete events
-- Track event lifecycle:
-  - Active
-  - Completed
-  - On-Hold
-- Assign clients to events
-- Manage artists per event (stored locally per event)
-- Visual progress tracking
+Entry point to the application
+Clean modern UI
+Navigation to authentication and dashboard
+ Dashboard
 
----
+Overview of system activity
+Displays:
+Total events
+Active events
+Completed events
+Quick insight into operations
 
-###  Contract Intelligence (AI-Powered)
-- Upload contracts (PDF, DOCX)
-- Automatic text extraction from files
-- AI analysis using local LLM (Ollama)
+ Client Management
 
-#### Output includes:
--  Summary of the contract
--  Key clauses and responsibilities
--  Risk detection (e.g. cancellation penalties)
--  Smart recommendations
+Create and manage clients
+Link clients to events and contracts
+Centralized data for better organization
 
----
+ Event Management
 
-###  Client Management
-- Centralized client database
-- Link clients to events and contracts
-- Display client context directly in event cards
+Create, update, and delete events
+Assign clients to events
+Track status:
+active
+completed
+on-hold
+Manage artists per event
+Visual progress tracking
 
----
+ Contract Management
 
-###  Invoice & Payment Tracking
-- Manage financial states:
-  - Pending
-  - Paid
-  - Overdue
-- Designed to integrate with event lifecycle
+Upload contracts (PDF / DOCX)
+Store files and metadata
+Link contracts to events and clients
+Prepare contracts for AI analysis
 
----
+ AI Contract Analysis (⭐ Highlight Feature)
 
-##  AI Integration
+Extract text from uploaded contracts
+Analyze using local AI (Ollama)
 
-This project integrates **local AI (Ollama)** instead of external APIs, meaning:
-- No external API cost
-- Full control over data
-- Faster local processing
+Generate:
 
-The backend:
-1. Extracts contract text
-2. Sends it to the AI model
-3. Parses structured insights
-4. Returns JSON to frontend
+ Summary
+ Key Points
+ Risk Flags
+ Recommendations
 
----
+ Runs locally → no API cost + full privacy
 
-##  Tech Stack
+ Invoice Management
+Track invoice statuses:
+pending
+paid
+overdue
+Connect invoices to events and clients
+Foundation for financial tracking
 
-### Frontend
-- React (Vite)
-- TypeScript
-- Tailwind CSS
-- shadcn/ui (modern UI components)
-- Lucide Icons
+ Search & Filtering
 
-### Backend
-- Flask (Python)
-- SQLAlchemy ORM
-- SQLite database
+Search across events and clients
+Filter events by status
+Fast UI updates
 
-### AI Layer
-- Ollama (local LLM inference)
+ UI / UX
 
----
+Built with React + Tailwind + shadcn/ui
+Dark theme + glassmorphism style
+Responsive and modern design
 
-##  System Architecture
+## 📸 Screenshots
 
-Frontend (React)
-↓
-Flask API (REST)
-↓
-SQLite Database
-↓
-AI Layer (Ollama)
+### 🏠 Home Page
+![Home](./screenshots/home.png)
 
----
+### 🔐 Sign In
+![Sign In](./screenshots/signin.png)
 
-##  Project Structure
+### 📝 Sign Up
+![Sign Up](./screenshots/signup.png)
 
-ems-project/
-│
-├── app/ # Frontend (React + Vite)
-│ ├── components/
-│ ├── pages/
-│ └── ui/
-│
-├── backend/ # Flask backend
-│ ├── app.py # Main API
-│ ├── models.py # Database models
-│ ├── config.py
-│ ├── uploads/ # Stored contracts
-│ └── requirements.txt
-│
-└── .gitignore
+### 📊 Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
----
+### 👥 Clients
+![Clients](./screenshots/clients.png)
 
-## ⚙️ Installation & Setup
+### 📅 Events
+![Events](./screenshots/events.png)
 
-### 1. Clone repository
+### 📄 Contracts
+![Contracts](./screenshots/contracts.png)
 
-```bash
+### 🧠 AI Analysis
+![Analysis](./screenshots/analysis.png)
+
+### 💰 Invoices
+![Invoices](./screenshots/invoices.png)
+
+ Tech Stack
+
+Frontend
+React (Vite)
+Tailwind CSS
+shadcn/ui
+Lucide Icons
+Backend
+Flask
+Flask-SQLAlchemy
+Flask-CORS
+AI
+Ollama (Local LLM)
+Database
+SQLite
+
+ Installation
+
+1. Clone repository
 git clone https://github.com/BEZZARRANYA/ems-ai-crm.git
 cd ems-ai-crm
-2. Backend Setup
+2. Backend setup
 cd backend
 
 python3 -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
+pip install python-docx
+
 python app.py
 
 Backend runs on:
 
 http://127.0.0.1:5001
+3. Frontend setup
+cd app
 
+npm install
+npm run dev
+
+Frontend runs on:
+
+http://localhost:5173
+🔗 Frontend ↔ Backend Connection
+
+Frontend communicates with backend using REST API:
+
+fetch("http://127.0.0.1:5001/api/events")
+
+Flask uses CORS to allow communication between ports.
+
+ Future Improvements
+Authentication system (JWT)
+Cloud deployment
+Payment integration
+Real-time updates
+Advanced analytics dashboard
+👩‍💻 Author
+
+Ranya Bezzar
+GitHub: https://github.com/BEZZARRANYA
+
+ Final Note
+
+This project demonstrates:
+
+Full-stack architecture
+API design and integration
+AI integration in real workflows
+Clean UI/UX design
+
+⭐ Done
+
+This version is:
+
+Clean ✅
+Professional ✅
+Easy to read ✅
+Portfolio-ready ✅
