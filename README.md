@@ -1,9 +1,9 @@
- EMS AI CRM
+ -EMS AI CRM
 AI-Powered Event & Contract Management Platform
 
 A full-stack application that combines event management, client CRM, and AI contract analysis into one intelligent system.
 
- Overview
+ -Overview
 
 EMS AI CRM is built to simulate a real-world business platform used by event agencies and managers.
 
@@ -29,7 +29,7 @@ Flask Backend (REST API)
         
  Core Features
 
- Authentication
+ -Authentication
 
 Sign up and login pages
 Structured entry into the system
@@ -109,31 +109,31 @@ Responsive and modern design
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home](screenshots/home.png)
+![Home](./screenshots/home.png)
 
 ### 🔐 Sign In
-![Sign In](screenshots/signin.png)
+![Sign In](./screenshots/signin.png)
 
 ### 📝 Sign Up
-![Sign Up](screenshots/signup.png)
+![Sign Up](./screenshots/signup.png)
 
 ### 📊 Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](./screenshots/dashboard.png)
 
 ### 👥 Clients
-![Clients](screenshots/clients.png)
+![Clients](./screenshots/clients.png)
 
 ### 📅 Events
-![Events](screenshots/events.png)
+![Events](./screenshots/events.png)
 
 ### 📄 Contracts
-![Contracts](screenshots/contracts.png)
+![Contracts](./screenshots/contracts.png)
 
 ### 🧠 AI Analysis
-![Analysis](screenshots/analysis.png)
+![Analysis](./screenshots/analysis.png)
 
 ### 💰 Invoices
-![Invoices](screenshots/invoices.png)
+![Invoices](./screenshots/invoices.png)
 
  Tech Stack
 
